@@ -1,3 +1,4 @@
+import function.SimpleFunction;
 import interpolation.AitkenScheme;
 import interpolation.InterpolationPolynomial;
 import interpolation.builder.InterpolationPolynomialBuilder;
@@ -8,7 +9,7 @@ import static java.lang.Math.pow;
 public class Main {
     public static void main(String[] args) {
         InterpolationPolynomialBuilder builder = new InterpolationPolynomialBuilder();
-        InterpolationPolynomial poly = builder.function(x -> pow(x,2))
+        InterpolationPolynomial poly = builder.function(new SimpleFunction(x -> pow(x,2)))
                 .interpolationAlgorithm(new AitkenScheme())
                 .intervalBounds(-3, 3)
                 .degree(2)

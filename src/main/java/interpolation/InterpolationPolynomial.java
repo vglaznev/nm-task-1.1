@@ -1,6 +1,8 @@
 package interpolation;
 
-public class InterpolationPolynomial {
+import function.Function;
+
+public class InterpolationPolynomial implements Function {
     private final double[] nodes;
     private final double[] valuesInNodes;
     private final InterpolationAlgorithm interpolationAlgorithm;
@@ -11,6 +13,7 @@ public class InterpolationPolynomial {
         this.interpolationAlgorithm = interpolationAlgorithm;
     }
 
+    @Override
     public double getY(double x){
         return interpolationAlgorithm.calculate(nodes, valuesInNodes, x);
     }
