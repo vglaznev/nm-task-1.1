@@ -19,4 +19,8 @@ public class Config {
     public static String getProperty(String key) {
         return defaultProps.getProperty(key);
     }
+
+    public static Properties getDefaultProps(){
+        return defaultProps;
+    };
 }
