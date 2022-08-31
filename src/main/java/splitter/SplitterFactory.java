@@ -20,7 +20,7 @@ public class SplitterFactory {
         } else if (uniformSplitterIdentifiers.contains(splitterTypeLower)) {
             return new UniformSplitter();
         } else {
-            throw new IllegalArgumentException("Нет такого разбиения");
+            throw new IllegalArgumentException("There is no such splitter!");
         }
     }
 }
