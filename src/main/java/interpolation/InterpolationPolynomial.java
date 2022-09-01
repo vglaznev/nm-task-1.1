@@ -1,5 +1,6 @@
 package interpolation;
 
+import function.DotFunction;
 import function.Function;
 
 public class InterpolationPolynomial implements Function {
@@ -16,5 +17,9 @@ public class InterpolationPolynomial implements Function {
     @Override
     public double getY(double x){
         return interpolationAlgorithm.calculate(nodes, valuesInNodes, x);
+    }
+
+    public DotFunction geInterpolationGrid(){
+        return new DotFunction(nodes, valuesInNodes);
     }
 }

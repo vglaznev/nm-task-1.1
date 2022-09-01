@@ -33,6 +33,7 @@ public class Plotter {
 
     public void addDots(DotFunction function, String dotsName) {
         XYSeries series = chart.addSeries(dotsName, function.x(), function.y());
+        series.setXYSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
     }
 
     public void display() {
