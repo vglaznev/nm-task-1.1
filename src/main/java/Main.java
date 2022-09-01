@@ -3,7 +3,6 @@ import function.FunctionUtil;
 import function.SimpleFunction;
 import interpolation.InterpolationPolynomial;
 import interpolation.builder.InterpolationPolynomialBuilder;
-import reader.InterpolationConfigurationConsoleReader;
 import reader.InterpolationConfigurationFileReader;
 import reader.Reader;
 
@@ -40,15 +39,8 @@ public class Main {
                 "function", Color.green);
         functionsPlotter.addGraphic(FunctionUtil.getDotFunction(errorFunction, beginOfInterval, endOfInterval, resolution),
                 "error", Color.red);
-        functionsPlotter.addDots(poly.geInterpolationGrid(), "nodes");
+        functionsPlotter.addDots(poly.getInterpolationGrid(), "nodes");
         functionsPlotter.display();
-
-        /*
-        1. Построить полином +
-        2. Нарисовать исходный полином и функцию +
-        3. Вычислить ошибку +
-        4. Нарисовать ошибку +
-        */
     }
 
 }

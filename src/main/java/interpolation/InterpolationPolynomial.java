@@ -19,7 +19,7 @@ public class InterpolationPolynomial implements Function {
         return interpolationAlgorithm.calculate(nodes, valuesInNodes, x);
     }
 
-    public DotFunction geInterpolationGrid(){
+    public DotFunction getInterpolationGrid(){
         return new DotFunction(nodes, valuesInNodes);
     }
 }
