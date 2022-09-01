@@ -1,6 +1,6 @@
 package interpolation.builder;
 
-import function.SimpleFunction;
+import function.Function;
 import interpolation.AitkenScheme;
 import interpolation.InterpolationAlgorithm;
 import interpolation.InterpolationPolynomial;
@@ -11,14 +11,14 @@ import java.util.Arrays;
 import java.util.Properties;
 
 public class InterpolationPolynomialBuilder {
-    private SimpleFunction function;
+    private Function function;
     private InterpolationAlgorithm interpolationAlgorithm;
     private IntervalSplitter splitter;
     private Double beginOfInterval;
     private Double endOfInterval;
     private Integer degree;
 
-    public InterpolationPolynomialBuilder function(SimpleFunction function) {
+    public InterpolationPolynomialBuilder function(Function function) {
         this.function = function;
         return this;
     }
