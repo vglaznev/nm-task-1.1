@@ -1,11 +1,14 @@
 package interpolation.builder;
 
 import function.SimpleFunction;
+import interpolation.AitkenScheme;
 import interpolation.InterpolationAlgorithm;
 import interpolation.InterpolationPolynomial;
 import splitter.IntervalSplitter;
+import splitter.SplitterFactory;
 
 import java.util.Arrays;
+import java.util.Properties;
 
 public class InterpolationPolynomialBuilder {
     private SimpleFunction function;
@@ -41,12 +44,23 @@ public class InterpolationPolynomialBuilder {
         return this;
     }
 
+    public InterpolationPolynomialBuilder allExceptFunction(Properties properties){
+        interpolationAlgorithm = (InterpolationAlgorithm) properties.getOrDefault("interpolationAlgorithm", null);
+        splitter = SplitterFactory.getSplitter(properties.getProperty("splitter"));
+        beginOfInterval = Double.parseDouble(properties.getProperty("beginOfInterval"));
+        endOfInterval = Double.parseDouble(properties.getProperty("endOfInterval"));
+        degree = Integer.parseInt(properties.getProperty("degree"));
+        return this;
+    }
+
     private boolean checkNullFields() {
-        return function == null || splitter == null || beginOfInterval == null || endOfInterval == null || degree == null
-                || interpolationAlgorithm == null;
+        return function == null || splitter == null || beginOfInterval == null || endOfInterval == null || degree == null;
     }
 
     public InterpolationPolynomial build() {
+        if(interpolationAlgorithm == null){
+            interpolationAlgorithm = new AitkenScheme();
+        }
         if (checkNullFields()) {
             throw new NullPointerException("Please set all parameters.");
         }
