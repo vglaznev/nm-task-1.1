@@ -64,7 +64,7 @@ public class InterpolationPolynomialBuilder {
         if (checkNullFields()) {
             throw new NullPointerException("Please set all parameters.");
         }
-        double[] nodes = splitter.split(beginOfInterval, endOfInterval, degree + 1);
+        double[] nodes = splitter.split(beginOfInterval, endOfInterval, degree);
         double[] functionValueInNodes = Arrays.stream(nodes).map(function::getY).toArray();
 
         return new InterpolationPolynomial(nodes, functionValueInNodes, interpolationAlgorithm);

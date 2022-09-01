@@ -13,7 +13,7 @@ public class ChebyshevSplitter implements IntervalSplitter{
         double coefficientInChebyshevRoot = PI / (2 * numberOfNodes + 2);
 
         return IntStream
-                .range(0, numberOfNodes)
+                .range(0, numberOfNodes + 1)
                 .mapToDouble(i -> centerOfInterval - radiusOfInterval * cos((2 * i + 1) * coefficientInChebyshevRoot))
                 .toArray();
     }
