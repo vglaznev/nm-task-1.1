@@ -4,17 +4,18 @@ import function.SimpleFunction;
 import interpolation.InterpolationPolynomial;
 import interpolation.builder.InterpolationPolynomialBuilder;
 import reader.InterpolationConfigurationConsoleReader;
+import reader.InterpolationConfigurationFileReader;
 import reader.Reader;
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.Properties;
 
-import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 
 public class Main {
-    public static void main(String[] args) {
-        Reader reader = new InterpolationConfigurationConsoleReader();
+    public static void main(String[] args) throws IOException {
+        Reader reader = new InterpolationConfigurationFileReader("interpolation.properties");
         Properties interpolationConfig = reader.read();
 
         Function interpolatedFunction = new SimpleFunction(x -> sin(x));
