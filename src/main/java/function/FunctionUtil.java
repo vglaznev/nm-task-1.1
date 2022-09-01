@@ -12,4 +12,16 @@ public class FunctionUtil {
         double[] y = Arrays.stream(x).map(function::getY).toArray();
         return new DotFunction(x, y);
     }
+
+    public static double maxValue(Function function, double beginOfInterval, double endOfInterval, double step){
+        double max = function.getY(beginOfInterval);
+        double value;
+        for (double x = beginOfInterval; x <= endOfInterval; x += step) {
+            value = function.getY(x);
+            if (value > max) {
+                max = value;
+            }
+        }
+        return max;
+    }
 }
