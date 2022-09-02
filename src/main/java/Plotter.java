@@ -1,4 +1,4 @@
-import function.DotFunction;
+import function.TableFunction;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
 import org.knowm.xchart.XYChartBuilder;
@@ -25,13 +25,13 @@ public class Plotter {
                 .build();
     }
 
-    public void addGraphic(DotFunction function, String functionName, Color functionColor) {
+    public void addGraphic(TableFunction function, String functionName, Color functionColor) {
         XYSeries series = chart.addSeries(functionName, function.x(), function.y());
         series.setLineColor(functionColor);
         series.setMarker(SeriesMarkers.NONE);
     }
 
-    public void addDots(DotFunction function, String dotsName) {
+    public void addDots(TableFunction function, String dotsName) {
         XYSeries series = chart.addSeries(dotsName, function.x(), function.y());
         series.setXYSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
     }
