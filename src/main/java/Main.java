@@ -30,14 +30,14 @@ public class Main {
         int resolution = 1000;
 
         Function errorFunction = new SimpleFunction(x -> abs(interpolatedFunction.getY(x) - poly.getY(x)));
-        System.out.println("Максимальное значение ошибки по модулю: " + FunctionUtil.maxValue(errorFunction, beginOfInterval, endOfInterval, 0.01));
+        System.out.println("Максимальное значение ошибки по модулю: " + FunctionUtil.max(errorFunction, beginOfInterval, endOfInterval, 0.01));
 
         Plotter functionsPlotter = new Plotter();
-        functionsPlotter.addGraphic(FunctionUtil.getDotFunction(poly, beginOfInterval, endOfInterval, resolution),
+        functionsPlotter.addGraphic(FunctionUtil.getTableFunction(poly, beginOfInterval, endOfInterval, resolution),
                 "poly", Color.black);
-        functionsPlotter.addGraphic(FunctionUtil.getDotFunction(interpolatedFunction, beginOfInterval, endOfInterval, resolution),
+        functionsPlotter.addGraphic(FunctionUtil.getTableFunction(interpolatedFunction, beginOfInterval, endOfInterval, resolution),
                 "function", Color.green);
-        functionsPlotter.addGraphic(FunctionUtil.getDotFunction(errorFunction, beginOfInterval, endOfInterval, resolution),
+        functionsPlotter.addGraphic(FunctionUtil.getTableFunction(errorFunction, beginOfInterval, endOfInterval, resolution),
                 "error", Color.red);
         functionsPlotter.addDots(poly.getInterpolationGrid(), "nodes");
         functionsPlotter.display();

@@ -1,6 +1,6 @@
 package interpolation;
 
-import function.DotFunction;
+import function.TableFunction;
 import function.Function;
 
 public class InterpolationPolynomial implements Function {
@@ -19,7 +19,7 @@ public class InterpolationPolynomial implements Function {
         return interpolationAlgorithm.calculate(nodes, valuesInNodes, x);
     }
 
-    public DotFunction getInterpolationGrid(){
-        return new DotFunction(nodes, valuesInNodes);
+    public TableFunction getInterpolationGrid(){
+        return new TableFunction(nodes, valuesInNodes);
     }
 }
