@@ -17,7 +17,7 @@ public class Main {
         Reader reader = new InterpolationConfigurationFileReader("interpolation.properties");
         Properties interpolationConfig = reader.read();
 
-        Function interpolatedFunction = new SimpleFunction(x -> 1 / (1 + pow(x, 2)));
+        Function interpolatedFunction = new SimpleFunction(x -> abs(x));
 
         InterpolationPolynomialBuilder builder = new InterpolationPolynomialBuilder();
         InterpolationPolynomial poly = builder
