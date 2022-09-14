@@ -3,7 +3,7 @@ import function.FunctionUtil;
 import function.SimpleFunction;
 import interpolation.InterpolationPolynomial;
 import interpolation.builder.InterpolationPolynomialBuilder;
-import reader.InterpolationConfigurationFileReader;
+import reader.PropertiesFileReader;
 import reader.Reader;
 
 import java.awt.*;
@@ -14,7 +14,7 @@ import static java.lang.Math.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Reader reader = new InterpolationConfigurationFileReader("interpolation.properties");
+        Reader reader = new PropertiesFileReader("interpolation.properties");
         Properties interpolationConfig = reader.read();
 
         Function interpolatedFunction = new SimpleFunction(x -> abs(x));

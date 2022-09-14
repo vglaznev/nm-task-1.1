@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class InterpolationConfigurationFileReader implements Reader {
+public class PropertiesFileReader implements Reader {
     private String fileName;
 
-    public InterpolationConfigurationFileReader(String fileName) {
+    public PropertiesFileReader(String fileName) {
         this.fileName = fileName;
     }
 
