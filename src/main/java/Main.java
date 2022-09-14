@@ -38,8 +38,8 @@ public class Main {
         functionsPlotter.addGraphic(FunctionUtil.getTableFunction(interpolatedFunction, beginOfInterval, endOfInterval, resolution),
                 "function", Color.green);
         functionsPlotter.addGraphic(FunctionUtil.getTableFunction(errorFunction, beginOfInterval, endOfInterval, resolution),
-                "error", Color.red);
-        functionsPlotter.addDots(poly.getInterpolationGrid(), "nodes");
+                "error", Color.orange);
+        functionsPlotter.addDots(poly.getInterpolationGrid(), "nodes", Color.red);
         functionsPlotter.display();
     }
 

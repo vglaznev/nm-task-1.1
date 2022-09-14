@@ -3,6 +3,7 @@ import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
 import org.knowm.xchart.XYChartBuilder;
 import org.knowm.xchart.XYSeries;
+import org.knowm.xchart.style.markers.Marker;
 import org.knowm.xchart.style.markers.SeriesMarkers;
 
 import java.awt.*;
@@ -31,8 +32,9 @@ public class Plotter {
         series.setMarker(SeriesMarkers.NONE);
     }
 
-    public void addDots(TableFunction function, String dotsName) {
+    public void addDots(TableFunction function, String dotsName, Color color) {
         XYSeries series = chart.addSeries(dotsName, function.x(), function.y());
+        series.setMarkerColor(color);
         series.setXYSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Scatter);
     }
 
